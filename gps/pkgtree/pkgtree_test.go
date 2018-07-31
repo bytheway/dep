@@ -2365,6 +2365,8 @@ func TestCanaryPackageTreeCopy(t *testing.T) {
 	packageFields := []string{
 		"Name",
 		"ImportPath",
+		"RelModPath",
+		"Module",
 		"CommentPath",
 		"Imports",
 		"TestImports",
