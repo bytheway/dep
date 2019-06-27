@@ -583,6 +583,49 @@ func TestListPackages(t *testing.T) {
 		out        PackageTree
 		err        error
 	}{
+		"gomod": {
+			fileRoot: j("gomod"),
+			importRoot: "gomod",
+			out: PackageTree{
+				ImportRoot: "gomod",
+				Packages: map[string]PackageOrErr{
+					"gomod": {
+						P: Package{
+							ImportPath:  "gomod",
+							CommentPath: "",
+							RelModPath: ".",
+							Module: "gomod",
+							Name:        "gomod",
+							Imports: []string{
+								"github.com/golang/dep/gps",
+								"gomodlib/v2",
+							},
+						},
+					},
+				},
+			},
+		},
+		"gomodlib": {
+			fileRoot: j("gomodlib"),
+			importRoot: "gomodlib",
+			out: PackageTree{
+				ImportRoot: "gomodlib",
+				Packages: map[string]PackageOrErr{
+					"gomodlib/v2": {
+						P: Package{
+							ImportPath:  "gomodlib/v2",
+							CommentPath: "",
+							RelModPath: ".",
+							Module: "gomodlib/v2",
+							Name:        "gomodlib",
+							Imports: []string{
+								"github.com/golang/dep/gps",
+							},
+						},
+					},
+				},
+			},
+		},
 		"empty": {
 			fileRoot:   j("empty"),
 			importRoot: "empty",
