@@ -1,0 +1,12 @@
+{
+  "commands": [
+    ["init", "-no-examples", "-skip-tools", "-gopath"]
+  ],
+  "error-expected": "",
+  "gopath-initial": {
+    "github.com/bytheway/gomod-dep-test/": "v2.0.0"
+  },
+  "vendor-final": [
+    "github.com/bytheway/gomod-dep-test"
+  ]
+}
